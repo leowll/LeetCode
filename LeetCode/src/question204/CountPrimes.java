@@ -8,10 +8,10 @@ public class CountPrimes {
 			return 0;
 		}
 
-		boolean[] notPrime = new boolean[n];
+		boolean[] notPrime = new boolean[n+1];
 		notPrime[0] = true;
 		notPrime[1] = true;
-		notPrime[2] = false;
+		
 		for (int i = 2; i < Math.sqrt(n); i++) {
 			if (notPrime[i] == false) {
 				for (int j = i * i; j < n; j += i) {
@@ -31,7 +31,7 @@ public class CountPrimes {
 	}
 
 	public static void main(String[] args) {
-		int count = countPrimes(1000);
+		int count = countPrimes(2);
 		System.out.println("count:"+count);
 	}
 
